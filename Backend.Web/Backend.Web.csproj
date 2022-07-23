@@ -1,0 +1,349 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+    <AspNetCoreModuleName>AspNetCoreModuleV2</AspNetCoreModuleName>
+    <LangVersion>8.0</LangVersion>
+    </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="EnterpriseInformationSystems\**" />
+    <Content Remove="EnterpriseInformationSystems\**" />
+    <EmbeddedResource Remove="EnterpriseInformationSystems\**" />
+    <None Remove="EnterpriseInformationSystems\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net5.0\appsettings.Development.json" />
+    <Content Include="bin\Debug\net5.0\appsettings.json" />
+    <Content Include="bin\Debug\net5.0\Backend.Web.deps.json" />
+    <Content Include="bin\Debug\net5.0\Backend.Web.runtimeconfig.dev.json" />
+    <Content Include="bin\Debug\net5.0\Backend.Web.runtimeconfig.json" />
+    <Content Include="bin\Debug\net5.0\runtimes\win-x64\native\IronPdf.Native.Chrome.deployment.json" />
+    <Content Include="bin\Debug\net5.0\runtimes\win-x86\native\IronPdf.Native.Chrome.deployment.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Amazon.Lambda.AspNetCoreServer" Version="5.3.0" />
+    <PackageReference Include="AspNetCoreHero.EntityFrameworkCore.AuditTrail" Version="1.0.0" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AWSSDK.Core" Version="3.5.2" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.101" />
+    <PackageReference Include="AWSSDK.S3" Version="3.5.7.8" />
+    <PackageReference Include="AWSSDK.SimpleEmail" Version="3.5.0.61" />
+    <PackageReference Include="CsvHelper" Version="27.2.1" />
+    <PackageReference Include="EPPlus.Core" Version="1.5.4" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.4.0" />
+    <PackageReference Include="HtmlRenderer.Core" Version="1.5.0.6" />
+    <PackageReference Include="HtmlRenderer.PdfSharp" Version="1.5.0.6" />
+    <PackageReference Include="IronPdf" Version="2022.1.4599" />
+    <PackageReference Include="Kveer.XmlRPC" Version="1.1.1" />
+    <PackageReference Include="Liquibase.Cli" Version="3.7.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MimeKit" Version="2.10.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="PasswordGenerator" Version="2.1.0" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.2.6" />
+    <PackageReference Include="Quartz" Version="3.2.4" />
+    <PackageReference Include="Select.HtmlToPdf.NetCore" Version="21.2.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.20.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Backend.Application\Backend.Application.csproj" />
+    <ProjectReference Include="..\Backend.Data\Backend.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="2.2.0" />
+        <PackageReference Include="Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core" Version="19.4.0.42" />
+        <PackageReference Include="Syncfusion.XlsIO.Net.Core" Version="19.3.0.48" />
+        <PackageReference Include="TinyCsvParser" Version="2.6.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="bin\Debug\net5.0\Amazon.Lambda.APIGatewayEvents.dll" />
+        <None Include="bin\Debug\net5.0\Amazon.Lambda.ApplicationLoadBalancerEvents.dll" />
+        <None Include="bin\Debug\net5.0\Amazon.Lambda.AspNetCoreServer.dll" />
+        <None Include="bin\Debug\net5.0\Amazon.Lambda.Core.dll" />
+        <None Include="bin\Debug\net5.0\Amazon.Lambda.Logging.AspNetCore.dll" />
+        <None Include="bin\Debug\net5.0\Amazon.Lambda.Serialization.SystemTextJson.dll" />
+        <None Include="bin\Debug\net5.0\AspNetCoreHero.EntityFrameworkCore.AuditTrail.dll" />
+        <None Include="bin\Debug\net5.0\AutoMapper.dll" />
+        <None Include="bin\Debug\net5.0\AWSSDK.Core.dll" />
+        <None Include="bin\Debug\net5.0\AWSSDK.Extensions.NETCore.Setup.dll" />
+        <None Include="bin\Debug\net5.0\AWSSDK.S3.dll" />
+        <None Include="bin\Debug\net5.0\AWSSDK.SimpleEmail.dll" />
+        <None Include="bin\Debug\net5.0\Backend.Application.dll" />
+        <None Include="bin\Debug\net5.0\Backend.Application.pdb" />
+        <None Include="bin\Debug\net5.0\Backend.Data.dll" />
+        <None Include="bin\Debug\net5.0\Backend.Data.pdb" />
+        <None Include="bin\Debug\net5.0\Backend.Web.dll" />
+        <None Include="bin\Debug\net5.0\Backend.Web.exe" />
+        <None Include="bin\Debug\net5.0\Backend.Web.pdb" />
+        <None Include="bin\Debug\net5.0\BCrypt.Net.dll" />
+        <None Include="bin\Debug\net5.0\BouncyCastle.Crypto.dll" />
+        <None Include="bin\Debug\net5.0\CsvHelper.dll" />
+        <None Include="bin\Debug\net5.0\de\PdfSharp.Charting.resources.dll" />
+        <None Include="bin\Debug\net5.0\de\PdfSharp.resources.dll" />
+        <None Include="bin\Debug\net5.0\Elasticsearch.Net.dll" />
+        <None Include="bin\Debug\net5.0\EPPlus.Core.dll" />
+        <None Include="bin\Debug\net5.0\FluentValidation.AspNetCore.dll" />
+        <None Include="bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll" />
+        <None Include="bin\Debug\net5.0\FluentValidation.dll" />
+        <None Include="bin\Debug\net5.0\HtmlRenderer.dll" />
+        <None Include="bin\Debug\net5.0\HtmlRenderer.PdfSharp.dll" />
+        <None Include="bin\Debug\net5.0\Humanizer.dll" />
+        <None Include="bin\Debug\net5.0\IronPdf.dll" />
+        <None Include="bin\Debug\net5.0\Kveer.XmlRPC.dll" />
+        <None Include="bin\Debug\net5.0\MediatR.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.AspNetCore.Server.Kestrel.Https.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.Data.SqlClient.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.Extensions.Configuration.Abstractions.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.Extensions.Configuration.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.Identity.Client.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll" />
+        <None Include="bin\Debug\net5.0\Microsoft.OpenApi.dll" />
+        <None Include="bin\Debug\net5.0\MimeKit.dll" />
+        <None Include="bin\Debug\net5.0\MySqlConnector.dll" />
+        <None Include="bin\Debug\net5.0\Nest.dll" />
+        <None Include="bin\Debug\net5.0\Newtonsoft.Json.Bson.dll" />
+        <None Include="bin\Debug\net5.0\Newtonsoft.Json.dll" />
+        <None Include="bin\Debug\net5.0\PasswordGenerator.dll" />
+        <None Include="bin\Debug\net5.0\PdfSharp.Charting.dll" />
+        <None Include="bin\Debug\net5.0\PdfSharp.dll" />
+        <None Include="bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll" />
+        <None Include="bin\Debug\net5.0\Pomelo.JsonObject.dll" />
+        <None Include="bin\Debug\net5.0\Quartz.dll" />
+        <None Include="bin\Debug\net5.0\ref\Backend.Web.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb" />
+        <None Include="bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\chrome_100_percent.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\chrome_200_percent.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\chrome_elf.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\d3dcompiler_47.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\icudtl.dat" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\IronCefSubprocess.exe" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\IronInterop.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\libcef.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\libEGL.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\libGLESv2.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\am.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\ar.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\bg.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\bn.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\ca.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\cs.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\da.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\de.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\el.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\en-GB.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\en-US.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\es-419.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\es.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\et.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\fa.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\fi.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\fil.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\fr.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\gu.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\he.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\hi.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\hr.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\hu.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\id.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\it.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\ja.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\kn.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\ko.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\lt.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\lv.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\ml.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\mr.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\ms.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\nb.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\nl.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\pl.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\pt-BR.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\pt-PT.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\ro.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\ru.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\sk.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\sl.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\sr.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\sv.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\sw.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\ta.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\te.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\th.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\tr.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\uk.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\vi.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\zh-CN.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\locales\zh-TW.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\pdfium.vanilla.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\resources.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\snapshot_blob.bin" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\sni.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\swiftshader\libEGL.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\swiftshader\libGLESv2.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\v8_context_snapshot.bin" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\vk_swiftshader.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x64\native\vulkan-1.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\chrome_100_percent.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\chrome_200_percent.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\chrome_elf.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\d3dcompiler_47.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\icudtl.dat" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\IronCefSubprocess.exe" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\IronInterop.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\libcef.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\libEGL.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\libGLESv2.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\am.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\ar.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\bg.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\bn.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\ca.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\cs.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\da.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\de.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\el.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\en-GB.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\en-US.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\es-419.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\es.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\et.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\fa.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\fi.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\fil.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\fr.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\gu.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\he.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\hi.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\hr.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\hu.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\id.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\it.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\ja.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\kn.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\ko.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\lt.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\lv.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\ml.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\mr.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\ms.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\nb.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\nl.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\pl.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\pt-BR.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\pt-PT.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\ro.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\ru.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\sk.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\sl.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\sr.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\sv.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\sw.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\ta.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\te.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\th.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\tr.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\uk.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\vi.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\zh-CN.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\locales\zh-TW.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\pdfium.vanilla.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\resources.pak" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\snapshot_blob.bin" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\sni.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\swiftshader\libEGL.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\swiftshader\libGLESv2.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\v8_context_snapshot.bin" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\vk_swiftshader.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win-x86\native\vulkan-1.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll" />
+        <None Include="bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll" />
+        <None Include="bin\Debug\net5.0\Select.Html.dep" />
+        <None Include="bin\Debug\net5.0\Select.HtmlToPdf.dll" />
+        <None Include="bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll" />
+        <None Include="bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll" />
+        <None Include="bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll" />
+        <None Include="bin\Debug\net5.0\Syncfusion.Compression.Portable.dll" />
+        <None Include="bin\Debug\net5.0\Syncfusion.HtmlConverter.Portable.dll" />
+        <None Include="bin\Debug\net5.0\Syncfusion.Licensing.dll" />
+        <None Include="bin\Debug\net5.0\Syncfusion.Pdf.Portable.dll" />
+        <None Include="bin\Debug\net5.0\Syncfusion.XlsIO.Portable.dll" />
+        <None Include="bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll" />
+        <None Include="bin\Debug\net5.0\System.Data.SqlClient.dll" />
+        <None Include="bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll" />
+        <None Include="bin\Debug\net5.0\System.Drawing.Common.dll" />
+        <None Include="bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll" />
+        <None Include="bin\Debug\net5.0\System.Runtime.Caching.dll" />
+        <None Include="bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll" />
+        <None Include="bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll" />
+        <None Include="bin\Debug\net5.0\System.Xml.XPath.XmlDocument.dll" />
+        <None Include="bin\Debug\net5.0\TinyCsvParser.dll" />
+        <None Include="bin\Debug\net5.0\web.config" />
+        <None Include="web.config" CopyToPublishDirectory="Always" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="bin\Release\net5.0\ref\" />
+      <Folder Include="Images\" />
+    </ItemGroup>
+
+</Project>
